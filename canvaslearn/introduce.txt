@@ -1,0 +1,16 @@
+1. line
+  a. color
+  b. dot line
+2. circle
+  a. stroke
+  b. fill
+3. curve line
+4. text
+  a. font 
+  b. size
+5. collision detection
+6. rect
+  a. stroke
+  b. fill
+7. draw image
+8. toData

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Canvas</title>
+  <style>
+    .tutorial {
+      border: 1px solid greenyellow;
+    }
+  </style>
+</head>
+<body>
+  <h1>How to draw text</h1>
+  <canvas id="canvas" class="tutorial" width="400" height="150">
+      Your browser does not support canvas
+  </canvas>
+  <script style="border: 2px solid blue; display:none; background-color:black; white-space: pre; color: whitesmoke">
+    let canvas = document.getElementById('canvas')
+    let ctx = canvas.getContext('2d')
+
+    ctx.font = "20px serif";
+    ctx.fillText("Hello world", 10, 20);
+
+    ctx.textBaseline = 'top' // default is alphabetic
+    ctx.textAlign = 'start' //end, center
+    ctx.strokeText("Hello world", 10, 20);
+
+    const text = ctx.measureText("foo"); // TextMetrics object
+    ctx.fillText(`foo: ${text.width}`, 10, 40);
+
+  </script>
+</body>
+</html>

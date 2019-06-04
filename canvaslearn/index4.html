@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Canvas</title>
+  <style>
+    .tutorial {
+      border: 1px solid greenyellow;
+    }
+  </style>
+</head>
+<body>
+  <h1>How to draw curve line</h1>
+  <canvas id="canvas" class="tutorial" width="400" height="150">
+      Your browser does not support canvas
+  </canvas>
+  <script style="border: 2px solid blue; display:none; background-color:black; white-space: pre; color: whitesmoke">
+    let canvas = document.getElementById('canvas')
+    let ctx = canvas.getContext('2d')
+    
+    ctx.strokeStyle = '#FFA500'
+    ctx.beginPath();
+    ctx.moveTo(50, 50);
+    ctx.quadraticCurveTo(182, 6, 250, 100);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(50, 50);
+    ctx.bezierCurveTo(100, 150, 200, 20, 250, 100);
+    ctx.stroke();
+
+  </script>
+</body>
+</html>

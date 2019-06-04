@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Canvas</title>
+  <style>
+    .tutorial {
+      border: 1px solid greenyellow;
+    }
+  </style>
+</head>
+<body>
+  <h1>How to draw circle</h1>
+  <canvas id="canvas" class="tutorial" width="400" height="150">
+      Your browser does not support canvas
+  </canvas>
+  <script style="border: 2px solid blue; display:none; background-color:black; white-space: pre; color: whitesmoke">
+    let canvas = document.getElementById('canvas')
+    let ctx = canvas.getContext('2d')
+    // ctx.globalAlpha = .1
+    for(var i=0;i<4;i++){
+      for(var j=0;j<3;j++){
+        ctx.strokeStyle = 'rgb(0,' + Math.floor(255-42.5*i) + ',' + Math.floor(255-42.5*j) + ')';
+        ctx.fillStyle = 'rgb(' + Math.floor(255-42.5*i) + ',' + Math.floor(255-42.5*j) + ',0)';
+        ctx.beginPath();
+        var x = 25 + j * 50;
+        var y = 25 + i * 50;
+        var radius = 20;
+        var startAngle = 0;
+        var endAngle = Math.PI + (Math.PI * j) / 2;
+        var anticlockwise = i % 2 == 0 ? false : true;
+        j == 1 ? ctx.setLineDash( [ 2, 2 ] ) : ctx.setLineDash([])
+        ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise);
+
+        if (i>1){
+          ctx.fill();
+        } else {
+          ctx.stroke();
+        }
+      }
+    }
+  </script>
+</body>
+</html>

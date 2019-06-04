@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Canvas</title>
+  <style>
+    .tutorial {
+      border: 1px solid greenyellow;
+    }
+  </style>
+</head>
+<body>
+  <h1>How to draw rect</h1>
+  <canvas id="canvas" class="tutorial" width="400" height="150">
+      Your browser does not support canvas
+  </canvas>
+  <script style="border: 2px solid blue; display:none; background-color:black; white-space: pre; color: whitesmoke">
+    let canvas = document.getElementById('canvas')
+    let ctx = canvas.getContext('2d')
+
+    ctx.fillRect(160, 25, 100, 100);
+    ctx.clearRect(180, 45, 60, 60);
+    ctx.strokeRect(185, 50, 50, 50);
+
+    for (var i=0;i<6;i++){
+      for (var j=0;j<6;j++){
+        ctx.fillStyle = 'rgb(' + Math.floor(255-42.5*i) + ',' + Math.floor(255-42.5*j) + ',0)';
+        ctx.fillRect(j*25,i*25,25,25);
+      }
+    }
+
+  </script>
+</body>
+</html>

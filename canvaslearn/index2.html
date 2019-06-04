@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Canvas</title>
+  <style>
+    .tutorial {
+      border: 1px solid greenyellow;
+    }
+  </style>
+</head>
+<body>
+  <h1>How to draw line</h1>
+  <canvas id="canvas" class="tutorial" width="400" height="150">
+      Your browser does not support canvas
+  </canvas>
+  <script style="border: 2px solid blue; display:none; background-color:black; white-space: pre; color: whitesmoke">
+    let canvas = document.getElementById('canvas')
+    let ctx = canvas.getContext('2d')
+    
+    for (var i = 1; i <= 10; i++){
+      ctx.lineWidth = 1 + i
+      ctx.strokeStyle = `rgba(0, 0, 0, ${i * .1}`;
+      ctx.beginPath()
+      ctx.moveTo(5 + i * 14, 5)
+      ctx.lineTo(5 + i * 14, 140)
+      ctx.stroke()
+    }
+
+    ctx.lineWidth = 5
+    ctx.strokeStyle = '#09f';
+    ctx.beginPath();
+    ctx.setLineDash( [ 10, 5 ] );
+    ctx.moveTo( 200, 100 );
+    ctx.lineTo( 300, 100 );
+    ctx.stroke();
+  </script>
+</body>
+</html>

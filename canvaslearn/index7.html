@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Canvas</title>
+  <style>
+    .tutorial {
+      border: 1px solid greenyellow;
+    }
+  </style>
+</head>
+<body>
+  <h1>How to draw image</h1>
+  <canvas id="canvas" class="tutorial" width="350" height="250">
+      Your browser does not support canvas
+  </canvas>
+  <script style="border: 2px solid blue; display:none; background-color:black; white-space: pre; color: whitesmoke">
+    let canvas = document.getElementById('canvas')
+    let ctx = canvas.getContext('2d')
+
+    var img = new Image();// image, canvas, video, imageData, blob
+    img.onload = function(){
+      ctx.drawImage(img, 0, 0);
+      ctx.drawImage(img, 0, 0, 50, 50);
+      ctx.drawImage(img, 150, 100, 150, 127, 50, 50, 50, 50);
+
+      //ctx.getImageData(x, y, width, height)
+      //ctx.toDataURL('image/png')
+      //ctx.toDataURL('image/jpeg', quality)
+    };
+    img.src = 'https://mdn.mozillademos.org/files/5397/rhino.jpg';
+
+  </script>
+</body>
+</html>
